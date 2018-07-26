@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        #wrap{
+            width:650px;
+            margin:0 auto;
+        }
+        
+        h1{font-size: :20px;text-align: center;}
+        hr{margin: 0 auto;}
+        
+        table{border-collapse:collapse;} /*셀간격과 2중 테두리가 완벽하게 통합*/
+        td{
+          /*td는 세로중앙정렬이 기본설정됨
+            셀(td)안에서 세로 정렬은 vertical-aline 속성 이용*/  
+        
+            width:150px;
+            height:50px;
+            text-align: center;
+            border:1px solid black;
+            vertical-align: top;
+            vertical-align: bottom;
+            vertical-align: middle;
+        } 
+        
+        th{
+          /*
+            th는 기본적으로 가세정렬이 설정되어있어서 text-align: center; 안주어도됨
+            그리고 굵은글씨가 기본설정이 되어있음
+            그리고 th는 테이블 컬럼에 사용된 자료를 구분하기 위해 만들어졌다
+            열에 대한 제목은 scope="col"
+            행에 대한 제목은 scope="row"
+            */  
+        
+            width:150px;
+            height:50px;
+            border:1px solid black;
+        } 
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        
+        <heather><h1>테이블은 표로된 정보를 나타낼 때만 사용</h1></heather>
+        
+        <section>
+            <h2>1행 1열</h2>
+            <table>
+                <tr>
+                    <td>1행 1열</td>
+                </tr>
+            </table>
+            
+            <hr>
+            <h2>1행 1열</h2>
+            <table>
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                </tr>
+            </table>
+            
+            <hr>
+            <h2>1행 3열</h2>
+             <table>
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                    <td>1-3</td>
+                </tr>
+            </table>
+            
+            <hr>
+            <h2>2행 1열</h2>
+             <table>   
+              <!--tr*2>td*1-->
+                <tr>
+                    <td>1-1</td>
+                 
+                </tr>
+                
+                <tr>
+                    <td>1-1</td>
+                </tr>
+            </table>
+            <hr>
+            <h2>2행 2열</h2>
+             <table>   
+              
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                 
+                </tr>
+                
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                </tr>
+            </table>
+            <hr>
+          <h2>3행 4열</h2>
+             <table>   
+              
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                    <td>1-3</td>
+                    <td>1-4</td>
+                 
+                </tr>
+                
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                    <td>1-3</td>
+                    <td>1-4</td>
+                 
+                </tr>
+                
+                <tr>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                    <td>1-3</td>
+                    <td>1-4</td>
+                 
+                </tr>
+            </table>
+            
+ <hr>
+ <h2>UI/UX 출석부</h2>       
+ <table>
+     <tr>
+         <th scope="col">이름</th>
+         <th scope="col">연락처</th>
+         <th scope="col">주소</th>
+         <th scope="col">나이</th>
+     </tr>
+     
+     <tr>
+         <td>홍길동</td>
+         <td>010-1234-5678</td>
+         <td>서울 관악구</td>
+         <td>27</td>
+     </tr>
+     
+     <tr>
+         <td>알렉스</td>
+         <td>041-123-4567</td>
+         <td>미국 로스엔젤레스</td>
+         <td>18</td>
+     </tr>
+     
+     <tr>
+         <td>엠마</td>
+         <td>031-1111-1111</td>
+         <td>영국 런던</td>
+         <td>20</td>
+     </tr>
+ </table>       
+       
+       <hr>
+       
+       <h2>3행 4열 테이블에서 병합 - <!--열병합-->colspan, <!--행병합-->rowspan</h2>
+             
+             <table>   
+              
+                <tr>
+                    <td>1-1</td>
+                    <td colspan="3">1-2</td>
+                    <!--<td>1-3</td>
+                    <td>1-4</td>-->
+                 
+                </tr>
+                
+                <tr>
+                    <td rowspan="2">2-1</td>
+                    <td>2-2</td>
+                    <td>2-3</td>
+                    <td rowspan="2">2-4</td>
+                 
+                </tr>
+                
+                <tr>
+                   <!-- <td>3-1</td>-->
+                    <td colspan="2">3-2</td>
+                    <!--<td>3-3</td>-->
+                    <!--<td>3-4</td>-->
+                 
+                </tr>
+            </table>
+       
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
+<!--
+  <table>
+   <tr>
+     <td></td>
+   </tr>
+     </table>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

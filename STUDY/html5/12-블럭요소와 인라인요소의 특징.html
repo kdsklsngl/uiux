@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>12-블럭요소와 인라인요소의 특징</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        *{margin:0;padding:0;}
+        
+        h1,span{
+            width:400px;
+            height:200px;
+            border:1px solid blue;
+        background-color:yellow;}
+        
+        /*span{border:1px solid blue;
+        background-color:yellow;}를 따로 안쓰고 위에 h1에 콤마(,)를 써서 같은 값을 줄수있다*/
+        
+        
+        p{
+            width:200px;
+            background-color:red;
+        }
+        
+        div{
+            color:blue;
+            background-color:orange;
+                width:80px;
+            height:20px; /*높이를 정해주면 overflow 현상이 일어난다.*/
+            
+        }
+        
+        div~span{
+            background-color:green;
+            border:1px solid red;
+        }
+        
+        hr~p{
+            display:block;
+            display:inline-block; /* 재정의 했다고 부름*/
+            width:100px;
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        p.box1{background-color:pink;}
+        
+        p.box2{background-color:skyblue;}
+    </style>
+</head>
+<body>
+    
+    
+    <h1>나는 블럭요소 h1</h1>
+    <span>나는 인라인요소 span</span>
+    <p>나는 블럭요소 p</p>
+    <div>나는 블럭요서 div</div>
+    
+    <span>나는 인라인 요소 span-1</span>
+    <span>나는 인라인 요소 span-2</span>
+    <span>나는 인라인 요소 span-3</span>
+    <span>나는 인라인 요소 span-4</span>
+    <span>나는 인라인 요소 span-5</span>
+    
+    
+    <hr>
+    
+    <p class="box1">박스1</p><p class="box2">박스2</p>
+    <h2>요소간의 줄바꿈은 한칸 공백으로 인식한</h2>
+    <!-- p.box1 하고 탭하면 됨-->
+    
+    
+    
+    <!-- ★★★★★★★★★★
+    
+    1. HTML의 모든 태그는 block 아니면 inline 이다.
+    
+    2. block 요소의 특징은 {display:block;}
+       - 지배영역이 컨텐츠 양에 관계없이 한줄 전체이다.
+       - 기본적으로 width 값은 부모크기의 100% 이다.(부모가 크면 자식도 크고 부모가 작으면 자식도 작다)
+       - 따라서 자동 줄바꿈 처리가 된다.
+       
+    3. inline 요소의 특징은 {diplay:inline;}
+       - 지배영역이 컨텐츠 양만큼이다.
+       - 따라서 인라인 요소 2개를 연속해서 사용할경우 나란히 옆에 나열된다.
+       - width, height 가 적용되지 않는다.
+       
+    4. {display:inline-block;}
+       - 인라인과 블럭의 특징을 반반씩 갖는다.
+       - 자동줄바꿈이 되지 않고, 인라인처럼 옆으로 붙는다.
+       - width, height 가 적용된다.
+    
+    -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

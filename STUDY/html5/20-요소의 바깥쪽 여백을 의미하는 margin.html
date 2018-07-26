@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 바깥쪽 여백을 의미하는 margin</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css"> <!--자주쓰는것은 reset에 넣어두기-->
+    <style>
+        /* .text-center 클래스가 붙어있는 모든 요소
+        EX.
+        .text-center = *.text-center 
+        h1..text-center = h1에서 text-center가 속한것에 스타일이 적용됨*/
+        h2,h3,address{
+            height:100px;
+            line-height:100px;
+            text-align: center;
+        }
+        
+        .case_1>.parent{
+            width:250px;
+            height:250px;
+            background-color: darkturquoise;
+            border:1px solid transparent; 
+        }
+        
+        /*문제1 자식박스에 윗마진 100px, 왼쪽마진 150px 적용*/
+        
+        
+        .case_1>.parent>.child{
+            width:100px;
+            height: 100px;
+            margin-top:100px;
+            margin-left: 150px;
+            
+            line-height: 100px;
+            text-align: center;
+            background-color: darkorange;
+        }
+        
+        
+/************************************************************************************************************************/
+        
+        .case_2>.parent{
+            width:600px;
+            height:500px;
+            background-color:dodgerblue;
+            border:1px solid white;
+            
+            
+        }
+        .case_2>.parent>p{
+            display: inline-block;
+            width:100px;
+            height:100px;
+            line-height: 100px;
+            text-align:center;
+            
+            border:1px solid black;
+            box-sizing: border-box;
+        } /*해당 박스는 사이즈가 보더사이즈 합해서 102다*/
+        
+        /*문제2 .child_1 요소에게 margin을 다음과 같이 설정
+        위로100, 오른쪽 150, 아래20, 왼쪽 200
+        */
+        
+        .case_2>.parent>.child_1{
+            /*margin-top:100px;
+            margin-right:100px;
+            margin-bottom: 20px;
+            margin-left: 200px;
+            
+            margin:100px 150px 20px 200px;*/ /*위에 top right bottom left의 약식 표현법이다.*/
+            margin:50px; /*사방이 동일한 값일 경우 약식표현법*/
+            margin:100px 70px; /*위,아래가 동일하고, 좌우가 동일한경우*/
+            margin:100px 70px 20px; /*좌우가 동일하고 위아래는 다른경우*/
+            
+            
+            background-color: yellow;
+            display:inline-block;}
+        
+        .case_2>.parent>.child_2{
+            background-color: yellow;
+            box-sizing: border-box;
+            display:inline-block;
+        }
+        
+        .case_2>.parent>.child_3{
+            margin-left: 70px;
+            background-color: yellow;
+            box-sizing: border-box;
+            display:block;
+        }
+        
+/******************************************************************************************************/
+        
+        .case_3>.parent{
+            overflow: hidden; /*넘쳐 흐르는 내용을 숨김처리*/
+            width:600px;
+            height:200px;
+            background-color:pink;
+            border:1px solid black;
+        }
+        
+        .case_3>.parent>p{
+            display: inline-block;/*블럭요소처럼 w,h적용가능한*/
+            width:150px;
+            height:50px;
+            color:white;
+            line-height:50px;
+            text-align:center;
+        }
+        
+        .case_3>.parent>.child_1{
+            margin-right: 100px;
+            background-color:blue;
+        }
+        
+        .case_3>.parent>.child_2{
+            background-color:blue;
+        }
+        
+    
+/******************************************************************************************************/
+        
+        article.case_4{
+            background-color:yellow;}
+        .case_4>.auto{
+            width:200px;
+            height:80px;
+            margin:0 auto; /*박스를 부모 요소를 기준으로 가로 중앙에 배치하고자 할때 margin 0 auto를 지정한다.
+                             또한 auto키워드는 좌우만 적용된다.
+                             그리고 margin 0 auto는 위아래 0 좌우로 auto 라는 의미*/
+            margin:100px auto 0px; /*좌우로 auto, 아래로 100px 이라는 의미*/
+            line-height: 80px;
+            text-align:center;
+            background-color:darkblue
+        }
+        
+    
+    </style>
+
+</head>
+<body>
+  <div id="wrap">
+      <header>
+      <h1 class="text-center">margin 사용법</h1>
+      </header>
+      
+      <!--div ->h1, p, address...등 모든 블럭요소들은 다 div를 상속받은것임
+      그런데 section이라는 것이 있다 이것은 내용영역이다
+      header, section footer 들은 위 중간 아래 레이아웃을 만드는게 아니다 보여지는 효과는 없지만
+      기재 해주므로 의미가 부여되는것이다
+      EX. header, section,article, footer, nav, aside,이런 태그를 HTML5 레이아웃용 시멘틱 태그라고 한다
+      
+      이 태그들의 역할은 브라우저에게 각각의 영역에 대한 의미만을 부여할 뿐 기본 CSS하고는 아무 관계없다.-->
+      
+      <section>
+          <h2>margin의 상황별 이해</h2>
+          
+            <article class="case_1">
+             <h3>1. 부모자식 관계의 margin</h3>
+             <ol>
+                 <li>왼쪽 상단 꼭지점이 기준</li>
+                 <li>벽을 밀어내는 느낌</li>
+                 <li>벽을 밀면 벽은 그대로</li>
+                 <li>벽을 미는 내가 밀려난다</li>
+                 
+             </ol>
+              <div class="parent">
+                  <p class="child">자식</p>
+              </div>
+          </article>
+          
+          <hr>
+          
+          <article class="case_2">
+              <h3>2.형제관계의 margin</h3>
+              
+          <ol>
+              <li>오른쪽, 아래 방향은 형제요소를 밀어낸다.</li>
+              <li>왼쪽, 위쪽 방향은 margin을 적용한 요소가 밀려난다.</li>
+          </ol>
+          
+              
+              <p>
+                  margin은 요소 자신을 움직이고 싶을 때 사용한다.
+                  또는 요소와 요소간의 간격을 떨어뜨리고 싶을 때 사용한다.
+              </p>
+              
+              <div class="parent">
+                  <p class="child_1">자식1</p> <p class="child_2">자식2</p> <p class="child_3">자식3</p>
+              </div>
+        </article>
+              
+        <article class="case_3">
+                  
+                  <h3>3.부모의 폭과 margin의 관계</h3>
+                  
+            <div class="parent">
+                  <p class="child_1">자식1</p> <p class="child_2">자식2</p> 
+            </div>
+               
+        </article>
+        
+        <hr>
+        
+        <article class="case_4">
+            
+            <h3>4. 가로 중앙으로 배치하는 auto 키워드</h3>
+            
+            <p class="auto">가로중앙박스</p>
+            
+            
+            
+        </article>
+    
+        
+        
+      </section>
+      
+      
+      <footer>
+          <address> &code; Designed by 홍길동</address>
+      </footer>
+      
+      
+      
+      
+      
+      
+  </div>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

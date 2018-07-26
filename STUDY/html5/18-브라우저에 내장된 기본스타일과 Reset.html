@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>브라우저에 내장된 기본스타일과 Reset</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        /*body,h1(모든태그)는 margin과 padding값이 기본적으로 있음 그래서 아래와 같이 0의 값을 줘야지 바깥여백 다 없어짐
+        그래서 앞으로 약식초기화가 필요함*/
+        *{margin:0;padding:0;} /*이것을 약식초기화 라고 부름*/
+        
+       
+        h1{border:1px solid red;} 
+        
+        h2{border:1px solid blue}
+        
+        p{border:1px solid black}
+        
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <h1>Bult-In CSS</h1>
+        <p>
+            어떤 이유로 브라우저가 "퍼블리셔가 작성한 CSS"를 읽지 못한다면, 브라우저 자체에 내장된 기본 스타일로
+            웹페이지에 적용하여 출력한다.
+        </p>
+        
+        <h2>css reset(태그의 초기화) 이 필요한 이유</h2>
+        <p>
+            웹브라우저마다 내장된 기본 스타일이 완전히 똑같지 않아서
+            크로스브라우징을 구현하기 어렵기 때문에
+            자주 사용하는 태그들에 한해 기본 스타일값을 제로화 한다.
+        </p>
+        
+        <h2>약식 초기화</h2>
+        <p>
+            CSS 코딩에 들어가면서 페이지에 속하는 모근 요소들의 여백을
+            초기화 시키는 작업 - <code>*{margin:0;padding:0;}</code>이 약식 초기화이다.
+        </p>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

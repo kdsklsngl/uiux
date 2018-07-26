@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS특정도값(우선순위 cascading)</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        h1{/*특정도값 : 1점*/
+        color:red;
+        font-size:50px
+        }
+        
+        h1{color:blue;} /*특정도값:1점*/
+        
+        #logo{color:green;} /*특정도값:100점*/
+        
+        .smart{color:black;} /*특정도값:10점*/
+        
+        ul>li:nth-child(4){
+         font-weight: 50px;
+        }
+        
+        h1#logo.smart+ul>li.notepad+li{  /*특정도값:124점*/
+            font-weight: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <div id="wrap">
+        <h1 id="logo" class="smart">CSS구체성 단위</h1>
+    
+    <ul>
+        <li>태그는 1점</li>
+        <li>클래스,가상선택자는 10점</li>
+        <li class="notepad">아이디는 100점</li>
+        <li>인라인방식은 1000점</li>
+        <li>!improtant - 무조건 최우선</li>
+    </ul>    
+        
+        
+        
+    </div>
+        
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

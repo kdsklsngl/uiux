@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+   
+</head>
+<body>
+ 
+    <style> 
+        /* id명이 wrap인 div 선택자*/
+        div#wrap{border: 1px solid black;
+        }
+        /*상자안에 있는 글자를 가운데 오게 할때*/
+       
+        #wrap>h1{
+            text-align:center;
+            line-height: 200px;  /*한줄의 문장을 박스의 세로 가운데 오게 하기위해서 줄간격의 값을 높이값과 일치시킨다.*/
+            height: 200px;
+            width: 400px;
+            border:10px solid blue;
+            border-radius: 50px;
+        }
+    /*id명 wrap이 붙어있는 모든 요소의 직계자식 h1*/
+        
+        h1+p{
+            text-align:center;
+            width: 100px;
+            height: 100px;
+            border: 5px solid red;
+                border-radius: 20px 30px 40px 50px;
+        }
+        
+        p.ball{
+            width:150px;
+            height:150px;
+            background-color: yellow;
+                text-align:center;
+            line-height: 130px;
+            border:10px solid blue; /* 보더를 주면 기본적으로 박스의 바깥쪽에 선이 생성되므로 박스의 크기가 보더의 수치만큼 커진다
+                                       */
+            border-radius: 75px;
+            box-sizing:border-box;/* 보더가 박스의 안쪽으로 생성된다.*/
+           
+        }
+    </style>
+  
+   <div id="wrap">  
+   
+    <h1>border-radius 학습</h1>
+     <p>사각형</p>
+     
+     <hr>
+     
+     <div>
+         <p class="ball">H</p>
+         <p class="ball">T</p>
+         <p class="ball">M</p>
+         <p class="ball">L</p>
+         <p class="ball">5</p>
+     </div>
+      </div> 
+   
+   <!--  id는 #이다 그래서 div#wrap 치고 탭누르면 div id="wrap"으로 됨, 절대 중복사용하면 안됨
+         만약 id값이 두개이상 있을 경우 제어할 대상을 찾지 못하고 첫번째 요소만 처리한다 
+         
+         그럼 id는 언제 사용할까? 
+         = id는 레이아웃을 담당하는 요소에 사용하고,
+         = 동적인 움직임을 표현하기위한 자바스크립트라는 프로그램에 연동할때 사용한다,
+         =나머지 요소들은 클래스와 태그선택자를 이용해서 접근하는 것을 권장한다-->
+         
+   <!--   <span class="point">  이거 자주 씀 -->
+   
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
