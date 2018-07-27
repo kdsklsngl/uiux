@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+#wrap{width:600px;margin:0 auto;background-color:#333;}
+header{position:relative;height:100px;background-color:#069;}
+header>h1{position:absolute;left:30px;top:40px;color:#fff;font-size:30px;}
+header>nav{position:absolute;left:240px;top:45px;}
+header>nav>.gnb{width:260px;*zoom:1;}
+header>nav>.gnb:after{display:block;clear:both;content:'';}
+header>nav>.gnb>li{float:left;width:65px;}
+header>nav>.gnb>li>a{display:block;height:20px;color:#fff;line-height:20px;text-align:center;} /*텍스트만 아니라 텍스트 주변영역까지 터치영역을 하고싶다면 display:block;으로 바꾸고 width와 height값을 주면 된다.*/
+header>nav>.gnb>li:nth-child(3)>a,header>nav>.gnb>li:hover>a{color:#ff0;font-weight:800;text-shadow:1px 1px 1px #fff;} /*nth-child는 친형제관계에서만 적용이 되기에 a:nth-child는 적용이 안된다*/ /*이와같은 색상주는 방법도 있다. rgba(255,255,255,0.5) 여기서 a는 투명도값이다*/
+section{width:570px;margin:0 auto;padding:30px 10px 10px 10px;background-color:#fff;}
+section>h2{margin-bottom:25px;color:#000;font-size:25px;}
+section>p{font-size:14px;line-height:1.5;*zoom:1;}
+section>p:after{display: block;clear: both;content:'';}
+section>p>.frame{display:block;overflow:hidden;float:right;width:300px;border-radius:5px;box-shadow:3px 3px 3px #aaa;}
+section>p>.frame>img{display:block;vertical-align:top;width:100%;}
+footer>address{height:80px;color:#fff;font-weight:800px;font-size:16px;line-height:80px;text-align:center;}
